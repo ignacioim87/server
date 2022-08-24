@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "server/api/server.js",
+            "use": "@now/node"
+        }
+    ],
+    "routes": [
+        { "src": "/get-products", "status": 200,"methods": ["GET"], "dest": "./api/server.js"},
+        { "src": "/api/v1", "dest": "/my-api.js" },
+        { "src": "/users/(?<id>[^/]*)", "dest": "/users-api.js?id=$id" },
+        { "src": "/.*", "dest": "https://server-navy-iota.vercel.app/"}
+    ]
+}
+
+
+
+   
