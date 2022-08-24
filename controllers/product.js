@@ -14,7 +14,6 @@ export async function getProducts(req, res) {
 
 export async function saveProduct(req, res) {
     const { nombre, descripcion, precio,imagen } = req.body;
-    console.log(req.body);
     try {
         await database.query('INSERT INTO producto SET?', {
             nombre: nombre,
